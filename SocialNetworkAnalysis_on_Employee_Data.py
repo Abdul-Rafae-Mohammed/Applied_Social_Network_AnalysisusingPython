@@ -38,6 +38,7 @@ for G in P1_Graphs:
 # * Preferential Attachment (`'PA'`)
 # * Small World with low probability of rewiring (`'SW_L'`)
 # * Small World with high probability of rewiring (`'SW_H'`)
+
 # 
 
 
@@ -61,12 +62,13 @@ def graph_identification():
 # 
 # ## Part 2 - Company Emails
 # 
-# For the second part , I worked with a company's email network where each node corresponds to a person at the company, and each edge indicates that at least one email
-# has been sent between two people.
+# For the second part , I worked with a company's email network where each node corresponds to a person at the company, 
+# and each edge indicates that at least one email has been sent between two people.
 # 
 # The network also contains the node attributes `Department` and `ManagmentSalary`.
 # 
-# `Department` indicates the department in the company which the person belongs to, and `ManagmentSalary` indicates whether that person is receiving a managment position salary.
+# `Department` indicates the department in the company which the person belongs to, and `ManagmentSalary` indicates whether 
+# that person is receiving a managment position salary.
 
 # In[ ]:
 
@@ -79,11 +81,12 @@ print(nx.info(G))
 
 # ### Part 2A - Salary Prediction
 # 
-# Using network `G`, We identify the people in the network with missing values for the node attribute `ManagementSalary` and predict whether or not these individuals are
-# receiving a managment position salary.
+# Using network `G`, We identify the people in the network with missing values for the node attribute `ManagementSalary` and 
+# predict whether or not these individuals are receiving a managment position salary.
 # 
-# To accomplish this,We create a matrix of node features using networkx, train a sklearn classifier on nodes that have `ManagementSalary` data, and predict a
-# probability of the node receiving a managment salary for nodes where `ManagementSalary` is missing.
+# To accomplish this,We create a matrix of node features using networkx, train a sklearn classifier on nodes that have 
+# `ManagementSalary` data, and predict a probability of the node receiving a managment salary for nodes where `ManagementSalary` 
+# is missing.
 # 
 # 
 # 
@@ -143,9 +146,10 @@ def salary_predictions():
 
 # ### Part 2B - New Connections Prediction
 # 
-# For the last part, We predict future connections between employees of the network. The future connections information has been loaded into the variable `future_connections`.
-# The index is a tuple indicating a pair of nodes that currently do not have a connection, and the `Future Connection` column indicates if an edge between those two nodes will
-# exist in the future, where a value of 1.0 indicates a future connection.
+# For the last part, We predict future connections between employees of the network. The future connections information has been loaded 
+# into the variable `future_connections`. The index is a tuple indicating a pair of nodes that currently do not have a connection, and 
+# the `Future Connection` column indicates if an edge between those two nodes will exist in the future, where a value of 1.0 indicates 
+# a future connection.
 
 # In[ ]:
 
@@ -153,10 +157,13 @@ future_connections = pd.read_csv('Future_Connections.csv', index_col=0, converte
 future_connections.head(10)
 
 
-# Using network `G` and `future_connections`, identify the edges in `future_connections` with missing values and predict whether or not these edges will have a future connection.
+# Using network `G` and `future_connections`, identify the edges in `future_connections` with missing values and predict whether 
+# or not these edges will have a future connection.
 # 
-# To accomplish this, We create a matrix of features for the edges found in `future_connections` using networkx, train a sklearn classifier on those edges in `future_connections`
-# that have `Future Connection` data, and predict a probability of the edge being a future connection for those edges in `future_connections` where `Future Connection` is missing.
+# To accomplish this, We create a matrix of features for the edges found in `future_connections` using networkx, 
+# train a sklearn classifier on those edges in `future_connections` that have `Future Connection` data, and 
+# predict a probability of the edge being a future connection for those edges in `future_connections` where 
+# `Future Connection` is missing.
 
 # 
 # Predictions are the probability of the corresponding edge being a future connection.
