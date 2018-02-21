@@ -84,7 +84,7 @@ print(nx.info(G))
 # Using network `G`, We identify the people in the network with missing values for the node attribute `ManagementSalary` and 
 # predict whether or not these individuals are receiving a managment position salary.
 # 
-# To accomplish this,We create a matrix of node features using networkx, train a sklearn classifier on nodes that have 
+# To accomplish this,We create a matrix of node features using networkx, train a sklearn Neural Network classifier on nodes that have 
 # `ManagementSalary` data, and predict a probability of the node receiving a managment salary for nodes where `ManagementSalary` 
 # is missing.
 # 
